@@ -3,11 +3,19 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import { ThemeProvider } from './contexts/ThemeContext';
+import { CurrentSlideProvider } from './contexts/CurrentSlideContext';
+import { SliderDataProvider } from './contexts/SliderDataContext';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <SliderDataProvider>
+      <CurrentSlideProvider>
+        <ThemeProvider>
+          <App />
+        </ThemeProvider>
+      </CurrentSlideProvider>
+    </SliderDataProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

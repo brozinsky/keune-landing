@@ -1,10 +1,10 @@
 import React from 'react'
 import './Section.scss'
-import image1 from '../assets/01_care.jpg'
-import image2 from '../assets/02_design.jpg'
-import image3 from '../assets/03_blend_1.jpg'
-import image4 from '../assets/04_koloryzacja.jpg'
-import image5 from '../assets/05_so_pure.jpg'
+import image1 from '../../assets/01_care.jpg'
+import image2 from '../../assets/02_design.jpg'
+import image3 from '../../assets/03_blend_1.jpg'
+import image4 from '../../assets/04_koloryzacja.jpg'
+import image5 from '../../assets/05_so_pure.jpg'
 
 const InfoLink = () => {
     return (
@@ -15,7 +15,6 @@ const InfoLink = () => {
         </div>
     )
 }
-
 
 const Section = () => {
     return (

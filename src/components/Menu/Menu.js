@@ -1,19 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Menu.scss';
-import { ReactComponent as Logo } from '../assets/logo_KEUNE.svg';
-import { ReactComponent as FbIcon } from '../assets/fb.svg';
-import { ReactComponent as YtIcon } from '../assets/yt.svg';
-import { ReactComponent as InstaIcon } from '../assets/insta.svg';
-import { ReactComponent as TwitterIcon } from '../assets/twitter.svg';
+import { ReactComponent as Logo } from '../../assets/logo_KEUNE.svg';
+import { ReactComponent as FbIcon } from '../../assets/fb.svg';
+import { ReactComponent as YtIcon } from '../../assets/yt.svg';
+import { ReactComponent as InstaIcon } from '../../assets/insta.svg';
+import { ReactComponent as TwitterIcon } from '../../assets/twitter.svg';
+import { ThemeContext } from '../../contexts/ThemeContext';
 
 
 const Menu = () => {
+    const [theme,] = useContext(ThemeContext);
 
     return (
         <nav className="menu">
-            <div className="menu__wrapper">
+            <div className={`menu__wrapper ${theme}`}>
                 <div>
-                    <Logo />
+                    <Logo fill={theme} />
                 </div >
                 <div className="menu__container">
                     <ul>
@@ -42,19 +44,19 @@ const Menu = () => {
                     <div className="menu__social">
                         <a className="menu__social-icon menu__social-icon--push"
                             href="https://twitter.com/keunehq?lang=pl">
-                            <TwitterIcon fill="#fff" />
+                            <TwitterIcon fill={theme} />
                         </a>
                         <a className="menu__social-icon"
                             href="https://www.instagram.com/keunehaircosmeticspolska/?hl=pl">
-                            <InstaIcon fill="#fff" />
+                            <InstaIcon fill={theme} />
                         </a>
                         <a className="menu__social-icon menu__social-icon--push"
                             href="https://pl-pl.facebook.com/keunepolska">
-                            <FbIcon fill="#fff" />
+                            <FbIcon fill={theme} />
                         </a>
                         <a className="menu__social-icon"
                             href="https://www.youtube.com/channel/UCOdtksu8bBylivZQ4znFulQ">
-                            <YtIcon fill="#fff" />
+                            <YtIcon fill={theme} />
                         </a>
                     </div>
                 </div>

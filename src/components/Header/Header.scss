@@ -53,16 +53,20 @@
                 cursor: pointer;
             }
 
-            &:hover span{
-                border-top: 2px solid #fff;
-                border-right: 2px solid #fff;
-            }
-
-            &--next{
-            }
-
-            &--prev{
+            &-prev{
                 transform: scale(-1);
+            }
+            &--black{
+                &:hover span{
+                    border-top: 2px solid rgb(49, 49, 49);
+                    border-right: 2px solid rgb(49, 49, 49);
+                }
+            }
+            &--white{
+                &:hover span{
+                    border-top: 2px solid #fff;
+                    border-right: 2px solid #fff;
+                }
             }
 
             &-arrow{
@@ -70,11 +74,18 @@
                 display: inline-block;
                 width: 9px;
                 height: 9px;
-                border-top: 2px solid rgba(255, 255, 255, 0.7);
-                border-right: 2px solid rgba(255, 255, 255, 0.7);
                 z-index: 2;
                 transform: translateX(-50%) rotate(54deg) skew(20deg);
 
+                &--black{
+                    border-top: 2px solid rgba(0, 0, 0, 0.7);
+                    border-right: 2px solid rgba(0, 0, 0, 0.7);
+                }
+
+                &--white{
+                    border-top: 2px solid rgba(255, 255, 255, 0.7);
+                    border-right: 2px solid rgba(255, 255, 255, 0.7);
+                }
             }
         }
 
@@ -91,12 +102,24 @@
             border-radius: 50%;
             height: 10px;
             width: 10px;
-            border: 1px solid #fff;
             transition: 0.2s;
 
-            &:hover{
-            background: #fff;
-            cursor: pointer;
+            &--black{
+                border: 1px solid #000;
+
+                &:hover{
+                    background: #000;
+                    cursor: pointer;
+                }
+            }
+
+            &--white{
+                border: 1px solid #fff;
+
+                &:hover{
+                    background: #fff;
+                    cursor: pointer;
+                }
             }
 
             &-logo{
@@ -110,8 +133,15 @@
             justify-self: center;
             align-self: center;
             height: 1px;
-            background: #bcbcbd;
             margin-top: 1rem;
+
+            &--black{
+                background: #2a2a2a;
+            }
+
+            &--white{
+                background: #bcbcbd;
+            }
         }
 
         &-loading{
@@ -119,8 +149,15 @@
             justify-self: center;
             align-self: center;
             height: 1.5px;
-            background: #fff;
             margin-top: 10px;
+
+            &--black{
+                background: #000;
+            }
+
+            &--white{
+                background: #fff;
+            }
         }
     }
 
