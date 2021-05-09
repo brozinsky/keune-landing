@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  font-weight: 100;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+h1{
+  font-size: 3.3rem;
+  font-weight: 100;
+}
+
+h2, h3{
+font-size: 3.3rem;
+line-height: 3.3rem;
+text-transform: uppercase;
+font-weight: 100;
+}
+
+.section-number{
+  font-size: 6rem;
+  font-weight: 300;
+  width: 130px;
+  position: relative;
+
+  &::after{
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      display: block;
+      height: 1px;
+      width: 200px;
+      background: #B5B5B5;
+      transform: translate(-50%,0) rotate(-45deg);
+      z-index: 3;
+  }
+}
