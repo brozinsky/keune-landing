@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/keune-landing/static/css/main.782e960e.chunk.css",
+    "main.css": "/keune-landing/static/css/main.709aa8ce.chunk.css",
     "main.js": "/keune-landing/static/js/main.444f54ba.chunk.js",
     "main.js.map": "/keune-landing/static/js/main.444f54ba.chunk.js.map",
     "runtime-main.js": "/keune-landing/static/js/runtime-main.cb4c24f1.js",
@@ -10,7 +10,7 @@
     "static/js/3.01e3bd73.chunk.js": "/keune-landing/static/js/3.01e3bd73.chunk.js",
     "static/js/3.01e3bd73.chunk.js.map": "/keune-landing/static/js/3.01e3bd73.chunk.js.map",
     "index.html": "/keune-landing/index.html",
-    "static/css/main.782e960e.chunk.css.map": "/keune-landing/static/css/main.782e960e.chunk.css.map",
+    "static/css/main.709aa8ce.chunk.css.map": "/keune-landing/static/css/main.709aa8ce.chunk.css.map",
     "static/js/2.4c0845de.chunk.js.LICENSE.txt": "/keune-landing/static/js/2.4c0845de.chunk.js.LICENSE.txt",
     "static/media/01_care.cd0a8ea3.jpg": "/keune-landing/static/media/01_care.cd0a8ea3.jpg",
     "static/media/02_design.5a141e56.jpg": "/keune-landing/static/media/02_design.5a141e56.jpg",
@@ -29,7 +29,7 @@
   "entrypoints": [
     "static/js/runtime-main.cb4c24f1.js",
     "static/js/2.4c0845de.chunk.js",
-    "static/css/main.782e960e.chunk.css",
+    "static/css/main.709aa8ce.chunk.css",
     "static/js/main.444f54ba.chunk.js"
   ]
 }
