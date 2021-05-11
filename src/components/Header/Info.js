@@ -23,21 +23,19 @@ const Info = () => {
         tl.addLabel('reveal')
             .fromTo(sectionTitleRef, { y: '-10vh' }, { duration: 1.4, y: '0', autoAlpha: 1, delay: 0.3 }, 'reveal')
             .fromTo(titleRef, { x: '-10vw' }, { duration: 1.4, x: '0', autoAlpha: 1, delay: 0.3 }, 'reveal')
+            .fromTo(buttonRef, { x: '-100vw' }, { duration: 1.4, x: '0', autoAlpha: 1, delay: 0.5 }, 'reveal')
             .fromTo(subtitleRef, { y: '100vh' }, { duration: 2, y: '0', autoAlpha: 1, delay: 1 }, 'reveal')
-            .fromTo(buttonRef, { x: '-100vw' }, { duration: 1.4, x: '0', autoAlpha: 1, delay: 1 }, 'reveal')
     })
 
     return (
-        <div className={`o1__info ${theme}`}>
+        <div className={`o1__info o1__info--${theme}`}>
             <div
                 ref={element => { sectionTitleRef = element }}
-                className={`o1__container section-number ${theme}`}>
+                className={`o1__container section-number`}>
                 o1.
                 </div>
-            <div
-                className={`o1__info-title ${theme}`}
-            >
-                <h1
+            <div>
+                <h1 className={`o1__info-title o1__info-title--${theme}`}
                     ref={element => { titleRef = element }}
                 >
                     {sliderData[currentSlide].titleLine1}
@@ -47,13 +45,14 @@ const Info = () => {
                 </h1>
                 <span
                     ref={element => { subtitleRef = element }}
-                    className={`o1__info-subtitle ${theme}`}
+                    className={`o1__info-subtitle o1__info-subtitle--${theme}`}
                 >
-                    {sliderData[currentSlide].subtitle} < span className="o1__info-subtitle--bold">
-                        Design
+                    {sliderData[currentSlide].subtitle1}
+                    < span className="o1__info-subtitle--bold">
+                        {sliderData[currentSlide].subtitle2}
                     </span>
                 </span>
-                <div
+                <a href={sliderData[currentSlide].link}
                     ref={element => { buttonRef = element }}
                     className={`o1__button ${theme}`}>
                     <span
@@ -62,7 +61,7 @@ const Info = () => {
                         className={`o1__button-link o1__button-link--${theme}`}>
                         <span className={`o1__button-arrow o1__button-arrow--${theme}`}></span>
                     </span>
-                </div>
+                </a>
             </div>
         </div >
     )

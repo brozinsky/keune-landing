@@ -11,14 +11,18 @@ export const SliderDataProvider = ({ children }) => {
             theme: 'black',
             titleLine1: 'Bez kompromisu.',
             titleLine2: 'Idealnie takie jak lubisz.',
-            subtitle: 'Keune design'
+            subtitle1: 'Keune',
+            subtitle2: 'design',
+            link: 'design'
         },
         {
             img: sliderImg2,
             theme: 'white',
-            titleLine1: 'Lorem Ipsum.',
-            titleLine2: 'Dolor sit amet.',
-            subtitle: 'Lorem'
+            titleLine1: 'Zadbane, zdrowe włosy',
+            titleLine2: 'W zasięgu ręki',
+            subtitle1: 'Keune',
+            subtitle2: 'care',
+            link: 'care'
         },
     ])
 

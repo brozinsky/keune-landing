@@ -9,8 +9,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
   font-weight: 100;
+}
+#root{
+  overflow-x: hidden;
 }
 
 code {
@@ -18,10 +20,13 @@ code {
     monospace;
 }
 
-
 h1{
-  // font-size: 3.3rem;
+  font-size: 2rem;
   font-weight: 100;
+
+  @media (min-width: 780px) {
+    font-size: 3.3rem;
+}
 }
 
 h2, h3{

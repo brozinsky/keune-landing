@@ -4,8 +4,8 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    width:100vw;
-    margin-top: 1rem;
+    width: 100vw;
+    margin-top: 3px;
 
     &__title{
         display: flex;
@@ -38,6 +38,7 @@
     &__item{
         position: relative;
         overflow: hidden;
+        max-height: 100%;
 
         @media (min-width: 480px) {
             transform: translate(0);
@@ -57,6 +58,10 @@
             &:hover .o2__info-text{
                 transform: translateX(-90px);
             }
+
+            &:hover img{
+                transform: scale(1.02);
+            }
         }
 
         @media (min-width: 780px) {
@@ -68,24 +73,20 @@
 
         &-small{
             width: 100%;
+            position: relative;
 
             @media (min-width: 480px) {
-                width: calc(33.33% - 6px);
-                flex: 0 0 calc(33.33% - 6px);
-                    &:hover img{
-                        transform: scale(1.2);
-                    }
+                width: calc(33.33% - 3px);
+                flex: 0 0 calc(33.33% - 3px);
             }
         }
 
         &-big{
+            width: 100%;
 
             @media (min-width: 480px) {
-                width: calc(66.66% - 6px);
-                flex: 0 0 calc(66.66% - 6px);
-                &:hover img{
-                    transform: scale(1.05);
-                }
+                width: calc(66.66% - 3px);
+                flex: 0 0 calc(66.66% - 3px);
             }
         }
     }
@@ -193,7 +194,6 @@
             }
         }
 
-
         &-line{
             width: 100px;
             justify-self: center;
@@ -209,7 +209,6 @@
 
         &-text{
             font-weight: 300;
-            // height: 30px;
             min-width: 80px;
             transform: translateX(0);
             transition-duration: 0.4s;
@@ -221,7 +220,7 @@
                 @media (min-width: 480px) {
                     display: inline;
                 }
-                }
+            }
 
             &-container{
                 @media (min-width: 480px) {
@@ -230,7 +229,7 @@
                     flex-direction: row;
                     overflow-x: hidden;
                 }
-                }
+            }
         }
 
         &-arrow{
@@ -246,5 +245,3 @@
         }
     }
 }
-
-

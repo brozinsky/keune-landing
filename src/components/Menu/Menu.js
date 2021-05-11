@@ -6,10 +6,11 @@ import { ReactComponent as YtIcon } from '../../assets/yt.svg';
 import { ReactComponent as InstaIcon } from '../../assets/insta.svg';
 import { ReactComponent as TwitterIcon } from '../../assets/twitter.svg';
 import { ThemeContext } from '../../contexts/ThemeContext';
-
+import { SectionDataContext } from '../../contexts/SectionDataContext';
 
 const Menu = () => {
     const [theme,] = useContext(ThemeContext);
+    const [sectionData,] = useContext(SectionDataContext);
     const [menuScroll, setMenuScroll] = useState();
     const [isOpen, setIsOpen] = useState(false);
     const [isDropped, setIsDropped] = useState(false);
@@ -18,12 +19,11 @@ const Menu = () => {
         setIsOpen(current => !current)
     }
 
-    const mediaQuery = window.matchMedia('(min-width: 768px)')
-
     useEffect(() => {
         window.addEventListener("scroll", handleScroll);
     })
 
+    //adds class to menu when scrolling down
     const handleScroll = () => {
         if (window.pageYOffset > 0) {
             if (!menuScroll) {
@@ -42,8 +42,8 @@ const Menu = () => {
             : `menu menu--${theme}`} >
             <div className='menu__wrapper'>
                 <div className="menu__logo">
-                    <Logo
-                        className={menuScroll || isDropped || isOpen ? 'white' : theme}
+                    <Logo className={menuScroll || isDropped || isOpen
+                        ? 'white' : theme}
                     />
                 </div >
                 <div
@@ -56,19 +56,15 @@ const Menu = () => {
                 </div>
                 <div className={`menu__container
                 ${isOpen ? 'menu__container--open' : ''}`}>
-                    <ul
-                        onMouseEnter={() => { setIsDropped(true) }}
+                    <ul onMouseEnter={() => { setIsDropped(true) }}
                         onMouseLeave={() => { setIsDropped(false) }}
                         className={`menu__dropdown
                     ${isDropped ? 'menu__dropdown--active' : ''}`}>
-                        <li><a href="care">Care</a></li>
-                        <li><a href="design">Design</a></li>
-                        <li><a href="blend">Blend</a></li>
-                        <li><a href="koloryzacja">Koloryzacja</a></li>
-                        <li><a href="so-pure">So pure</a></li>
+                        {sectionData.map(({ link, title }, index) => {
+                            return <li key={index}><a href={link}>{title}</a></li>
+                        })}
                     </ul>
-                    <ul
-                        className={`menu__tabs
+                    <ul className={`menu__tabs
                         menu__tabs--${theme}
                         ${isOpen ? 'menu__tabs--open' : ''}
                         ${menuScroll || isDropped || isOpen ? 'menu__tabs--scroll' : ''}

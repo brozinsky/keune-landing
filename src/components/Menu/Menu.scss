@@ -7,11 +7,10 @@
     letter-spacing: 1px;
     z-index: 99;
     margin-top: 0;
-    transition: 0.4s;
+    transition-duration: 0.3s;
 
     @media (min-width: 780px) {
         height: 100px;
-        transition: 0s;
     }
 
     &__burger {
@@ -21,7 +20,6 @@
         width: 30px;
         transform: translate(-9px, 23px);
         height: 3px;
-        transition: all .2s ease-in-out;
         z-index: 100;
         opacity: 85%;
 
@@ -32,7 +30,6 @@
             content: '';
             width: 30px;
             height: 3px;
-            transition: all .2s ease-in-out;
         }
 
         &:before {
@@ -203,8 +200,6 @@
     &__container{
         display: flex;
         flex-direction: column;
-        // justify-content: space-between;
-        // align-items: center;
         height: 100vh;
         width: 50vw;
         position: absolute;
@@ -289,21 +284,22 @@
         position: absolute;
         top: 100px;
         left: 0;
-        display: flex;
         align-items: center;
         flex-direction: row;
         justify-content: space-around;
         align-items: center;
         opacity: 0;
-        transition: 0.4s;
         margin: 0;
         margin-right: 1rem;
-        transform: translateY(-100px);
         height: 100px;
         z-index: 100;
         width: 50vw;
+        display: none;
+        transform: translateY(-100px);
+        transition-duration: .4s;
 
         &--active{
+            display: flex;
             @media (min-width: 780px) {
                 opacity: 1;
                 transform: translateY(0);
@@ -311,7 +307,8 @@
         }
 
         & li{
-            margin-right: 1.2rem;;
+            margin-right: 1.2rem;
+            text-transform: capitalize;
         }
     }
 }

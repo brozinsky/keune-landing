@@ -1,6 +1,7 @@
-.black{
-    color: #000;
-}
+$color-theme-white: #eee;
+$color-theme-white-light: rgb(255, 255, 255);
+$color-theme-black: #111;
+$color-theme-black-light: rgb(71, 71, 71);
 
 .o1{
     height: 100vh;
@@ -9,8 +10,9 @@
 
     &__carousel{
         height: 100vh;
-        width: 100vw;
+        width: 99vw;
         overflow: hidden;
+        position: absolute;
 
         &-img{
         position: absolute;
@@ -19,26 +21,29 @@
         object-fit: cover;
         opacity: 0;
         transition: 0.7s ease;
+        overflow: hidden;
 
         &--active{
         opacity: 1;
-        transform: scale(1.05);
+        transform: scale(1.02);
 
         animation: move 5s linear infinite;
         }
         }
     }
 
-
     &__panel{
         width:100%;
         position: absolute;
-        bottom: 10vh;
+        bottom: 2vh;
         left: 0;
-        color: #fff;
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        @media (min-width: 768px) {
+            bottom: 10vh;
+        }
 
         &-button{
             width: 10px;
@@ -51,6 +56,21 @@
             overflow: visible;
             text-transform: none;
             -webkit-appearance: button;
+            z-index: 5;
+
+            &-container{
+                display: flex;
+                flex-direction: row;
+                order: 2;
+                width: 100px;
+                justify-content: space-between;
+
+                @media (min-width: 768px) {
+                    order: 0;
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
 
             &:hover{
                 cursor: pointer;
@@ -59,16 +79,18 @@
             &-prev{
                 transform: scale(-1);
             }
+
             &--black{
                 &:hover span{
-                    border-top: 2px solid rgb(49, 49, 49);
-                    border-right: 2px solid rgb(49, 49, 49);
+                    border-top: 2px solid $color-theme-black-light;
+                    border-right: 2px solid $color-theme-black-light;
                 }
             }
+
             &--white{
                 &:hover span{
-                    border-top: 2px solid #fff;
-                    border-right: 2px solid #fff;
+                    border-top: 2px solid $color-theme-white-light;
+                    border-right: 2px solid $color-theme-white-light;
                 }
             }
 
@@ -81,13 +103,13 @@
                 transform: translateX(-50%) rotate(54deg) skew(20deg);
 
                 &--black{
-                    border-top: 2px solid rgba(0, 0, 0, 0.7);
-                    border-right: 2px solid rgba(0, 0, 0, 0.7);
+                    border-top: 2px solid $color-theme-black;
+                    border-right: 2px solid $color-theme-black;
                 }
 
                 &--white{
-                    border-top: 2px solid rgba(255, 255, 255, 0.7);
-                    border-right: 2px solid rgba(255, 255, 255, 0.7);
+                    border-top: 2px solid  $color-theme-white;
+                    border-right: 2px solid  $color-theme-white;
                 }
             }
         }
@@ -106,21 +128,22 @@
             height: 10px;
             width: 10px;
             transition: 0.2s;
+            z-index: 5;
 
             &--black{
-                border: 1px solid #000;
+                border: 1px solid $color-theme-black;
 
                 &:hover{
-                    background: #000;
+                    background: $color-theme-black-light;
                     cursor: pointer;
                 }
             }
 
             &--white{
-                border: 1px solid #fff;
+                border: 1px solid $color-theme-white;
 
                 &:hover{
-                    background: #fff;
+                    background: $color-theme-white-light;
                     cursor: pointer;
                 }
             }
@@ -139,11 +162,11 @@
             margin-top: 1rem;
 
             &--black{
-                background: #2a2a2a;
+                background: $color-theme-black-light;
             }
 
             &--white{
-                background: #bcbcbd;
+                background: $color-theme-white-light;
             }
         }
 
@@ -154,38 +177,57 @@
             height: 1.5px;
             margin-top: 10px;
 
+            &-container{
+                height: 20px;
+                display: flex;
+                align-items: center;
+                overflow: hidden;
+            }
+
             &--black{
-                background: #000;
+                background: $color-theme-black;
             }
 
             &--white{
-                background: #fff;
+                background: $color-theme-white;
             }
         }
     }
 
     &__info{
-        width: 35rem;
+        width: 80vw;
         position: absolute;
-        bottom: 5vh;
-        left: 5%;;
-        color: #fff;
+        bottom: 10vh;
+        left: 5%;
+
+        @media (min-width: 768px) {
+            width: 35rem;
+        }
+
+        &--black{
+            color: $color-theme-black;
+        }
+
+        &--white{
+            color: $color-theme-white;
+        }
 
         &-title{
-            font-size: 3rem;
+            font-size: 2rem;
 
-            @media (max-width: 768px) {
-                font-size: 2rem;
-            }
-
-            @media (max-width: 768px) {
-                font-size: 1rem;
+            @media (min-width: 768px) {
+                font-size: 3rem;
             }
         }
 
         &-subtitle{
-            font-size: 2rem;
+            font-size: 1.5rem;
             text-transform: uppercase;
+
+            @media (min-width: 768px) {
+                font-size: 2rem;
+            }
+
             &--bold{
                 font-weight: 400;
             }
@@ -193,17 +235,30 @@
     }
     &__button{
         margin-bottom: 5rem;
+        margin-top: 1rem;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        width: 330px;
+        width: 250px;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        @media (min-width: 768px) {
+            width: 330px;
+        }
 
         &-line{
-            width: 230px;
+            width: 165px;
             justify-self: center;
             align-self: center;
             height: 1px;
             background: #fff;
+
+            @media (min-width: 768px) {
+                width: 230px;
+            }
 
             &--black{
                 background: #000;
@@ -219,17 +274,12 @@
             align-items: center;
             transition: 0.5s;
 
-            &:hover{
-                cursor: pointer;
-                background: rgba(255, 255, 255, 0.486);
-            }
-
             &--white{
-                border: 1px #fff solid;
+                border: 1px $color-theme-white solid;
             }
 
             &--black{
-                border: 1px #000 solid;
+                border: 1px $color-theme-black solid;
             }
         }
 
@@ -242,13 +292,13 @@
             z-index: 2;
 
             &--white{
-                border-top: 2px solid #fff;
-                border-right: 2px solid #fff;
+                border-top: 2px solid $color-theme-white;
+                border-right: 2px solid $color-theme-white;
                 }
 
             &--black{
-                border-top: 2px solid #000;
-                border-right: 2px solid #000;
+                border-top: 2px solid $color-theme-black;
+                border-right: 2px solid $color-theme-black;
             }
         }
     }

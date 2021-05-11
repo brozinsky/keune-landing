@@ -14,8 +14,8 @@ const Section = () => {
                     <h2 className="o2__title-text">Marki <br /> Keune</h2>
                 </div>
             </div>
-            {sectionData.map(({ link, size, image, title }) => {
-                return <SectionItem link={link} size={size} image={image} title={title} />
+            {sectionData.map(({ link, size, image, title }, index) => {
+                return <SectionItem key={index} link={link} size={size} image={image} title={title} />
             })}
         </section>
     )
