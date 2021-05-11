@@ -6,15 +6,18 @@ import reportWebVitals from './reportWebVitals';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { CurrentSlideProvider } from './contexts/CurrentSlideContext';
 import { SliderDataProvider } from './contexts/SliderDataContext';
+import { SectionDataProvider } from './contexts/SectionDataContext';
 
 ReactDOM.render(
   <React.StrictMode>
     <SliderDataProvider>
-      <CurrentSlideProvider>
-        <ThemeProvider>
-          <App />
-        </ThemeProvider>
-      </CurrentSlideProvider>
+      <SectionDataProvider>
+        <CurrentSlideProvider>
+          <ThemeProvider>
+            <App />
+          </ThemeProvider>
+        </CurrentSlideProvider>
+      </SectionDataProvider>
     </SliderDataProvider>
   </React.StrictMode>,
   document.getElementById('root')
