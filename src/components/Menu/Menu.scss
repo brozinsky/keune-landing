@@ -96,10 +96,10 @@
         color: #fff;
     }
 
-    // &--color{
-    //     background: #000;
-    //     color: #fff !important;
-    // }
+    &--scroll{
+        background: #000;
+        color: #fff !important;
+    }
 
     &__wrapper{
         display: flex;
@@ -132,6 +132,10 @@
 
         &--white{
             color: #fff;
+        }
+
+        &--scroll{
+            color: #fff !important;
         }
 
         @media (min-width: 780px) {
