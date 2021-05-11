@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/keune-landing/static/css/main.782e960e.chunk.css",
-    "main.js": "/keune-landing/static/js/main.9aab4d31.chunk.js",
-    "main.js.map": "/keune-landing/static/js/main.9aab4d31.chunk.js.map",
-    "runtime-main.js": "/keune-landing/static/js/runtime-main.0eb4d518.js",
-    "runtime-main.js.map": "/keune-landing/static/js/runtime-main.0eb4d518.js.map",
-    "static/js/2.135e5811.chunk.js": "/keune-landing/static/js/2.135e5811.chunk.js",
-    "static/js/2.135e5811.chunk.js.map": "/keune-landing/static/js/2.135e5811.chunk.js.map",
-    "static/js/3.a6a0f712.chunk.js": "/keune-landing/static/js/3.a6a0f712.chunk.js",
-    "static/js/3.a6a0f712.chunk.js.map": "/keune-landing/static/js/3.a6a0f712.chunk.js.map",
+    "main.js": "/keune-landing/static/js/main.444f54ba.chunk.js",
+    "main.js.map": "/keune-landing/static/js/main.444f54ba.chunk.js.map",
+    "runtime-main.js": "/keune-landing/static/js/runtime-main.cb4c24f1.js",
+    "runtime-main.js.map": "/keune-landing/static/js/runtime-main.cb4c24f1.js.map",
+    "static/js/2.4c0845de.chunk.js": "/keune-landing/static/js/2.4c0845de.chunk.js",
+    "static/js/2.4c0845de.chunk.js.map": "/keune-landing/static/js/2.4c0845de.chunk.js.map",
+    "static/js/3.01e3bd73.chunk.js": "/keune-landing/static/js/3.01e3bd73.chunk.js",
+    "static/js/3.01e3bd73.chunk.js.map": "/keune-landing/static/js/3.01e3bd73.chunk.js.map",
     "index.html": "/keune-landing/index.html",
     "static/css/main.782e960e.chunk.css.map": "/keune-landing/static/css/main.782e960e.chunk.css.map",
-    "static/js/2.135e5811.chunk.js.LICENSE.txt": "/keune-landing/static/js/2.135e5811.chunk.js.LICENSE.txt",
+    "static/js/2.4c0845de.chunk.js.LICENSE.txt": "/keune-landing/static/js/2.4c0845de.chunk.js.LICENSE.txt",
     "static/media/01_care.cd0a8ea3.jpg": "/keune-landing/static/media/01_care.cd0a8ea3.jpg",
     "static/media/02_design.5a141e56.jpg": "/keune-landing/static/media/02_design.5a141e56.jpg",
     "static/media/03_blend_1.43e403c1.jpg": "/keune-landing/static/media/03_blend_1.43e403c1.jpg",
@@ -27,9 +27,9 @@
     "static/media/znak_keune.76d5d449.svg": "/keune-landing/static/media/znak_keune.76d5d449.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.0eb4d518.js",
-    "static/js/2.135e5811.chunk.js",
+    "static/js/runtime-main.cb4c24f1.js",
+    "static/js/2.4c0845de.chunk.js",
     "static/css/main.782e960e.chunk.css",
-    "static/js/main.9aab4d31.chunk.js"
+    "static/js/main.444f54ba.chunk.js"
   ]
 }
