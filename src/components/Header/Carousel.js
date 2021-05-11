@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useEffect, useContext, useRef } from 'react'
 import './Header.scss'
 import { CurrentSlideContext } from '../../contexts/CurrentSlideContext';
 import { SliderDataContext } from '../../contexts/SliderDataContext';
