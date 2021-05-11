@@ -12,6 +12,7 @@ const Menu = () => {
     const [theme,] = useContext(ThemeContext);
     const [menuScroll, setMenuScroll] = useState();
     const [isOpen, setIsOpen] = useState(false);
+    const [isDropped, setIsDropped] = useState(false);
 
     const handleBurger = () => {
         setIsOpen(current => !current)
@@ -36,14 +37,13 @@ const Menu = () => {
     }
 
     return (
-        <nav className={menuScroll !== null
-            ? `menu menu--${menuScroll}`
+        <nav className={menuScroll || isDropped || isOpen
+            ? `menu menu--scroll`
             : `menu menu--${theme}`} >
-
             <div className='menu__wrapper'>
                 <div className="menu__logo">
                     <Logo
-                    className={menuScroll ? 'white' : theme}
+                        className={menuScroll || isDropped || isOpen ? 'white' : theme}
                     />
                 </div >
                 <div
@@ -51,36 +51,55 @@ const Menu = () => {
                     className="menu__burger-menu">
                     <span
                         className={`menu__burger menu__burger--${theme}
-                        ${isOpen ? 'menu__burger--open' : ''}`}></span>
+                        ${isOpen ? 'menu__burger--open' : ''}
+                        ${menuScroll ? 'menu__burger--scroll' : ''}`}></span>
                 </div>
                 <div className={`menu__container
-                ${isOpen ? 'menu__container--open' : ''}`}
-                >
+                ${isOpen ? 'menu__container--open' : ''}`}>
+                    <ul
+                        onMouseEnter={() => { setIsDropped(true) }}
+                        onMouseLeave={() => { setIsDropped(false) }}
+                        className={`menu__dropdown
+                    ${isDropped ? 'menu__dropdown--active' : ''}`}>
+                        <li><a href="care">Care</a></li>
+                        <li><a href="design">Design</a></li>
+                        <li><a href="blend">Blend</a></li>
+                        <li><a href="koloryzacja">Koloryzacja</a></li>
+                        <li><a href="so-pure">So pure</a></li>
+                    </ul>
                     <ul
                         className={`menu__tabs
                         menu__tabs--${theme}
                         ${isOpen ? 'menu__tabs--open' : ''}
-                        ${menuScroll !== null ? 'menu__tabs--scroll' : ''}
+                        ${menuScroll || isDropped || isOpen ? 'menu__tabs--scroll' : ''}
                         `}>
-                        <li>
+                        <li className='menu__tabs-item'>
                             <a href="nowości">Nowości</a>
                         </li>
-                        <li>
-                            <a href="produkty">Produkty</a>
+                        <li className='menu__tabs-item menu__tabs-container'
+                            onMouseEnter={() => { setIsDropped(true) }}
+                            onMouseLeave={() => { setIsDropped(false) }}
+                        >
+                            <a href="produkty">Produkty </a>
+                            <div className='menu__tabs-arrow-container'>
+                                <span className={`menu__tabs-arrow
+                                menu__tabs-arrow--${theme}
+                                ${menuScroll || isDropped || isOpen ? 'menu__tabs-arrow--scroll' : ''}`} />
+                            </div>
                         </li>
-                        <li>
+                        <li className='menu__tabs-item'>
                             <a href="trendy">Trendy</a>
                         </li>
-                        <li>
+                        <li className='menu__tabs-item'>
                             <a href="o-firmie">O firmie</a>
                         </li>
-                        <li>
+                        <li className='menu__tabs-item'>
                             <a href="salony">Salony</a>
                         </li>
-                        <li>
+                        <li className='menu__tabs-item'>
                             <a href="dystrybutorzy">Dystrybutorzy</a>
                         </li>
-                        <li>
+                        <li className='menu__tabs-item'>
                             <a href="kontakt">Kontakt</a>
                         </li>
                     </ul>
@@ -88,25 +107,25 @@ const Menu = () => {
                         <a className="menu__social-icon menu__social-icon--push"
                             href="https://twitter.com/keunehq?lang=pl">
                             <TwitterIcon
-                                className={menuScroll ? 'white' : theme}
+                                className={menuScroll || isDropped || isOpen ? 'white' : theme}
                             />
                         </a>
                         <a className="menu__social-icon"
                             href="https://www.instagram.com/keunehaircosmeticspolska/?hl=pl">
                             <InstaIcon
-                                className={menuScroll ? 'white' : theme}
+                                className={menuScroll || isDropped || isOpen ? 'white' : theme}
                             />
                         </a>
                         <a className="menu__social-icon menu__social-icon--push"
                             href="https://pl-pl.facebook.com/keunepolska">
                             <FbIcon
-                                className={menuScroll ? 'white' : theme}
+                                className={menuScroll || isDropped || isOpen ? 'white' : theme}
                             />
                         </a>
                         <a className="menu__social-icon"
                             href="https://www.youtube.com/channel/UCOdtksu8bBylivZQ4znFulQ">
                             <YtIcon
-                                className={menuScroll ? 'white' : theme}
+                                className={menuScroll || isDropped || isOpen ? 'white' : theme}
                             />
                         </a>
                     </div>
